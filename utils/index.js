@@ -8,8 +8,8 @@ const getMinSecureVersions = (allReleases) => {
       const previousMinSecure = minSecureVersions[majorVersion];
       // If we have a possible minimum secure version for major release
       if (previousMinSecure) {
-        // If current version is less than previous stored
-        if (semver.compare(release.version, previousMinSecure.version) === -1) {
+        // If current version is greater than previous stored
+        if (semver.compare(release.version, previousMinSecure.version) === 1) {
           // Update the minimum secure version
           minSecureVersions[majorVersion] = release;
         }
@@ -43,6 +43,7 @@ const getLatestVersions = (allRelease) => {
       latestVersions[majorVersion] = release;
     }
   });
+  return latestVersions;
 };
 
 module.exports = { getMinSecureVersions, getLatestVersions };
