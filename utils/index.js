@@ -1,5 +1,9 @@
 const semver = require("semver");
 
+/**
+ * Returns the minimum secure version for each major release
+ * @param {Array} allReleases Array of releases
+ */
 const getMinSecureVersions = (allReleases) => {
   let minSecureVersions = {};
   allReleases.forEach((release) => {
@@ -23,6 +27,10 @@ const getMinSecureVersions = (allReleases) => {
   return minSecureVersions;
 };
 
+/**
+ * Returns the latest version for each major release
+ * @param {Array} allRelease Array of releases
+ */
 const getLatestVersions = (allRelease) => {
   let latestVersions = {};
   allRelease.forEach((release) => {
