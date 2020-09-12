@@ -10,7 +10,7 @@ router.get("/dependencies", (req, res) => {
   fs.readFile(pathToPackage, "utf-8", (err, data) => {
     if (err) {
       console.error(err);
-      res.status(500).send();
+      res.status(500).json({ statusCode: 500, message: err });
     } else {
       const { dependencies } = JSON.parse(data);
       res.render("dependencies.hbs", { dependencies });
