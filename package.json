@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape test/*",
     "start": "node index",
     "dev": "nodemon index"
   },
@@ -23,12 +23,12 @@
   },
   "homepage": "https://github.com/demola07/nodejs-examples-initiative-challenge#readme",
   "dependencies": {
+    "bent": "^7.3.10",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "semver": "^7.3.2"
   },
   "devDependencies": {
-    "bent": "^7.3.10",
     "get-port": "^5.1.1",
     "nock": "^13.0.4",
     "nodemon": "^2.0.4",
