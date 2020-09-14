@@ -11,7 +11,9 @@ router.get("/dependencies", (req, res) => {
   fs.readFile(pathToPackage, "utf-8", (err, data) => {
     if (err) {
       console.error(err);
-      res.status(500).json({ statusCode: 500, message: err });
+      res
+        .status(500)
+        .render("dependencies.hbs", { error: "Cannot fetch dependencies" });
     } else {
       const { dependencies } = JSON.parse(data);
       res.render("dependencies.hbs", { dependencies });
