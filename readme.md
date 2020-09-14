@@ -11,6 +11,31 @@
 5. Add the correct license to your project
 6. Follow guidelines and instructions
 
+## Checklist
+
+- [x] Complete route `GET - /dependencies`
+- [x] Complete route `GET - /minimum-secure`
+- [x] Complete route `GET - /latest-releases`
+- [x] Add MIT License
+- [x] Write test for routes
+
+## Usage
+
+1. Running the server
+
+```bash
+npm install
+npm run start
+# or
+npm run dev # development mode
+```
+
+2. Running test
+
+```bash
+npm run test
+```
+
 ## Requirements:
 
 - Use the API [here](https://nodejs.org/dist/index.json)
