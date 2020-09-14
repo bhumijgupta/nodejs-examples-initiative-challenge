@@ -268,6 +268,25 @@ tape("should get latest version", async function (t) {
   );
 });
 
+tape("should fail with 404", async function (t) {
+  let errorResponse;
+  try {
+    const request = bent(`${context.origin}/non-existing-route`);
+    await request();
+    console.log(rep);
+  } catch (err) {
+    errorResponse = await err.json();
+  } finally {
+    t.true(errorResponse, "error should be caught");
+    t.equal(errorResponse.statusCode, 404, "404 status present");
+    t.equal(
+      errorResponse.message,
+      "GET - /non-existing-route route not found",
+      "contains message and request route"
+    );
+  }
+});
+
 tape("teardown", function (t) {
   context.server.close();
   t.end();
